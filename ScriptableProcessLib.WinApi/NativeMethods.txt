@@ -1,0 +1,8 @@
+﻿CreateProcess
+InitializeProcThreadAttributeList
+UpdateProcThreadAttribute
+STARTUPINFOEXW
+STARTUPINFOEXA
+PROC_THREAD_ATTRIBUTE_NUM
+SetHandleInformation
+GetExitCodeProcess

@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "ScriptableProcess.TestChildConsole": {
+      "commandName": "Project"
+    },
+    "DelayTaskExample": {
+      "commandName": "Project",
+      "commandLineArgs": "DelayTaskExample"
+    },
+    "SpacedOutput": {
+      "commandName": "Project",
+      "commandLineArgs": "SpacedOutput"
+    }
+  }
+}
