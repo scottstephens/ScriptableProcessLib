@@ -66,9 +66,11 @@ namespace Microsoft.Windows.Sdk
                 lpPreviousValue: null,
                 lpReturnSize: (UIntPtr*)null
             );
+
             if (!success)
             {
-                throw new InvalidOperationException("Could not set pseudoconsole thread attribute. " + Marshal.GetLastWin32Error());
+                var err = Marshal.GetLastWin32Error();
+                throw new InvalidOperationException($"Failure setting the HANDLE_LIST thread attribute. Error code: {err} / 0x{err:x}");
             }
 
             if (flags_to_inherit != null)
