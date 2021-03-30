@@ -13,6 +13,8 @@ namespace ScriptableProcessLib.TestChildConsole
                 return StdinTest.Run(args);
             else if (args[0] == "DelayTaskExample")
                 return DelayTaskExample.Run(args);
+            else if (args[0] == "OnlyOutput")
+                return OnlyOutput.Run(args);
             else
                 return SpacedOutput.Run(args);
         }
