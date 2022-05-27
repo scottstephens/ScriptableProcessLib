@@ -6,3 +6,4 @@ STARTUPINFOEXA
 PROC_THREAD_ATTRIBUTE_NUM
 SetHandleInformation
 GetExitCodeProcess
+ShowWindow

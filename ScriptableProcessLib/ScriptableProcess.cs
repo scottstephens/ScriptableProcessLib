@@ -42,6 +42,9 @@ namespace ScriptableProcessLib
             STARTUPINFOEXW.Build(out var si);
             STARTUPINFOEXW.AllocateAttributeList(ref si, 1);
 
+            si.StartupInfo.dwFlags |= STARTUPINFOW_dwFlags.STARTF_USESHOWWINDOW;
+            si.StartupInfo.wShowWindow = (ushort)SHOW_WINDOW_CMD.SW_HIDE;
+
             this.StreamList = this.BuildStreamList();
             var handle_list = this.StreamList
                 .Select(x => x.ChildHandle)
@@ -60,7 +63,7 @@ namespace ScriptableProcessLib
                 si.StartupInfo.hStdError = new HANDLE(this.Error.DangerousChildHandle);
 
             if (this.StreamList.Count > 0)
-                si.StartupInfo.dwFlags = STARTUPINFOW_dwFlags.STARTF_USESTDHANDLES;
+                si.StartupInfo.dwFlags |= STARTUPINFOW_dwFlags.STARTF_USESTDHANDLES;
 
             ProcessHelpers.CreateProcess(out this.ProcessInfo, in si, command, inherit_handles: true);
 
